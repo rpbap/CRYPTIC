@@ -9,7 +9,7 @@ The tool is not perfect, but with tests against reported gp60 types from Genomes
 **Note for users**
 * Refdb is currently only having *C. parvum* GP60 types, others will be added in new releases
 * The --tree flag is disabled since it was malfunctioning don't use it until new release
-* in some cases mixes can be potentially reported but further investigation needs to be performed. Most of our mixed mock tests didnt reported mixes with accuracy. So avoid using this tool for that purpose.
+* In some cases mixes can be potentially reported but further investigation needs to be performed. Most of our mixed mock tests didnt reported mixes with accuracy. So avoid using this tool for that purpose.
 
 ## Usage
 
