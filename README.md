@@ -1,6 +1,9 @@
 # CRYPTIC v1.1
 
 **CRYPTIC**: **Cryptosporidium gp60 Typing and Identification Classifier**
+<p align="center">
+<img width="300" height="300" alt="CRYPTIC_color" src="https://github.com/user-attachments/assets/f8b4a5c6-87d4-4d36-84ad-e93ddad82001" />
+</p>
 
 CRYPTIC is a command-line tool for reference-based **Cryptosporidium gp60 typing** from genome assemblies, extracted gp60 sequences, and sequencing reads.
 
