@@ -23,7 +23,7 @@ Version **v1.1** supports:
 
 ## Overview
 
-CRYPTIC classifies gp60 sequences using a curated embedded gp60 reference database. It reports the likely gp60-associated species, gp60 family, subtype, best reference, identity, coverage, call status, and confidence.
+CRYPTIC classifies gp60 sequences using a curated embedded gp60 reference database. It reports the likely gp60-associated species, gp60 family, subtype (still on progress), best reference, identity, coverage, call status, and confidence.
 
 The tool currently uses **gp60-based typing**. Therefore, the `likely_species` column should be interpreted as the species assignment supported by the gp60 reference match, not as a full genome-based species identification.
 
