@@ -734,8 +734,7 @@ def pileup_bases_to_counts_with_ref(bases: str, ref_base: str) -> Dict[str, int]
     return counts
 
 
-def build_reference_guided_consensus(bam_path: Path, ref_fasta: Path, ref_id: str, ref_seq: str, min_depth: int, min_base_fraction: float, verbose: bool = False) -> Tuple[str, D
-ict[str, float]]:
+def build_reference_guided_consensus(bam_path: Path, ref_fasta: Path, ref_id: str, ref_seq: str, min_depth: int, min_base_fraction: float, verbose: bool = False) -> Tuple[str, Dict[str, float]]:
     require_executable("samtools")
     cmd = ["samtools", "mpileup", "-aa", "-A", "-d", "1000000", "-f", str(ref_fasta), "-r", ref_id, str(bam_path)]
     log(f"Building reference-guided consensus for {ref_id}.", verbose)
@@ -1126,9 +1125,7 @@ def process_read_sample(
     return row, consensus_record
 
 
-def type_reads(db_path: Path, output_dir: Path, threads: int, min_qcov: float, min_pident: float, ambiguity_delta: float, min_depth: int, min_base_fraction: float, min_mapped_re
-ads: int, candidate_limit: int = 25, min_candidate_breadth: float = 20.0, verbose: bool = False, illumina_r1: Optional[Path] = None, illumina_r2: Optional[Path] = None, illumina
-_dir: Optional[Path] = None, ont_reads: Optional[Path] = None, ont_dir: Optional[Path] = None, skip_unpaired: bool = False) -> None:
+def type_reads(db_path: Path, output_dir: Path, threads: int, min_qcov: float, min_pident: float, ambiguity_delta: float, min_depth: int, min_base_fraction: float, min_mapped_reads: int, candidate_limit: int = 25, min_candidate_breadth: float = 20.0, verbose: bool = False, illumina_r1: Optional[Path] = None, illumina_r2: Optional[Path] = None, illumina_dir: Optional[Path] = None, ont_reads: Optional[Path] = None, ont_dir: Optional[Path] = None, skip_unpaired: bool = False) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     input_modes = sum(x is not None for x in [illumina_r1, illumina_dir, ont_reads, ont_dir])
     if input_modes != 1:
@@ -1201,8 +1198,7 @@ _dir: Optional[Path] = None, ont_reads: Optional[Path] = None, ont_dir: Optional
     out_consensus = output_dir / "gp60_read_consensus_sequences.fasta"
     failed_tsv = output_dir / "failed_or_low_confidence_read_samples.tsv"
     fields = ["sample_id", "read_type", "R1_or_reads", "R2", "total_reads", "mapped_gp60_reads", "diagnostic_top_raw_read_reference", "diagnostic_top_raw_read_reference_reads", 
-"mean_gp60_depth", "gp60_breadth_coverage_pct", "consensus_n_count", "likely_species", "gp60_family", "gp60_subtype", "best_reference", "accession", "identity_pct", "query_cover
-age_pct", "reference_coverage_pct", "alignment_length_bp", "status", "confidence", "notes"]
+"mean_gp60_depth", "gp60_breadth_coverage_pct", "consensus_n_count", "likely_species", "gp60_family", "gp60_subtype", "best_reference", "accession", "identity_pct", "query_coverage_pct", "reference_coverage_pct", "alignment_length_bp", "status", "confidence", "notes"]
     with out_tsv.open("w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields, delimiter="\t")
         writer.writeheader()
