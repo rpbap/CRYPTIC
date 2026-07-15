@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# CRYPTIC v1.1.8 draft: Cryptosporidium gp60 Typing and Identification Classifier
+# CRYPTIC v1.1 draft: Cryptosporidium gp60 Typing and Identification Classifier
 from __future__ import annotations
 
 import argparse
