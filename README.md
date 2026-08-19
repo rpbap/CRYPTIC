@@ -1,4 +1,4 @@
-# CRYPTIC v1.1
+# CRYPTIC v1.2
 
 **CRYPTIC**: **Cryptosporidium gp60 Typing and Identification Classifier**
 <p align="center">
@@ -7,7 +7,7 @@
 
 CRYPTIC is a command-line tool for reference-based **Cryptosporidium gp60 typing** from genome assemblies, extracted gp60 sequences, and sequencing reads.
 
-Version **v1.1** supports:
+Version **v1.2** supports:
 
 - genome/assembly FASTA typing
 - extracted gp60 FASTA typing
@@ -90,16 +90,16 @@ CRYPTIC/
 For your current GitHub release, you can keep the latest tested script as:
 
 ```text
-cryptic_v1.1.py
+cryptic_v1.2.py
 ```
 
 or rename it to the simpler command name:
 
 ```bash
-mv cryptic_v1.1.py cryptic.py
+mv cryptic_v1.2.py cryptic.py
 ```
 
-All examples below use `cryptic.py`. Replace it with `cryptic_v1.1.py` if you keep the versioned file name.
+All examples below use `cryptic.py`. Replace it with `cryptic_v1.2.py` if you keep the versioned file name.
 
 ---
 
@@ -568,7 +568,7 @@ Developed by **Rodrigo P. Baptista**
 
 ## Version history
 
-### v1.1
+### v1.2
 
 - Added FASTQ reads mode
 - Added Illumina paired-end single-sample mode
